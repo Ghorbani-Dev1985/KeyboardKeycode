@@ -372,11 +372,18 @@ header {
   width: 100%;
   background-color: var(--PrimaryColor);
   color: #fff;
-  height: 80px;
+  height: 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
+  padding-top: 20px;
+  border-bottom: 10px solid #93c5fd;
+  border-radius: 0 0 5rem 0;
+  -webkit-border-radius: 0 0 5rem 0;
+  -moz-border-radius: 0 0 5rem 0;
+  -ms-border-radius: 0 0 5rem 0;
+  -o-border-radius: 0 0 5rem 0;
 }
 .logo {
   width: 40px;
@@ -426,7 +433,6 @@ header {
   line-height: 2.5rem;
 }
 .main__wrapper {
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -434,7 +440,7 @@ header {
   padding: 50px 10px;
   border: 1px dashed var(--PrimaryColor);
   border-radius: 8px;
-  margin: 40px 0;
+  margin: 40px 5px;
 }
 .main__wrapper h2 {
   margin: 20px 0;
@@ -460,9 +466,8 @@ header {
 }
 .keycode__infoBoxes {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 20px;
 }
 .infoBox {
@@ -560,32 +565,61 @@ tbody tr td{
 tbody tr:nth-child(even){
   background-color: #e2e2e2;
 }
+footer{
+  width: 100%;
+  height: 100px;
+  background-color: var(--PrimaryColor);
+  padding-top: 20px;
+  border-top: 10px solid #93c5fd;
+  border-radius: 5rem 0 0 0;
+  -webkit-border-radius: 5rem 0 0 0;
+  -moz-border-radius: 5rem 0 0 0;
+  -ms-border-radius: 5rem 0 0 0;
+  -o-border-radius: 5rem 0 0 0;
+}
+.footer{
+  color: #fff;
+  direction: ltr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-family: "Shabnam";
+}
 @media screen and (max-width: 500px) {
+  .table__btn {
+    background-color: transparent;
+    border: 1px solid #dddddd;
+    color: #fff;
+    border-radius: 8px;
+    padding: 5px;
+}
   .table__wrapper{
     max-width: 40rem;
     overflow: auto;
     padding: 0 10px;
   }
+  .header__logo p {
+    font-size: 15px;
+}
+.keycode__infoBoxes {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
 }
 @media screen and (min-width: 500px) {
   .container {
     width: 500px;
   }
   .keycode__infoBoxes {
-    flex-wrap: wrap;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
-
 }
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
   }
   .keycode__infoBoxes {
-    flex-wrap: wrap;
-  }
-  .infoBox {
-    flex-basis: 25%;
-    flex-grow: 1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 @media screen and (min-width: 1200px) {
@@ -593,6 +627,6 @@ tbody tr:nth-child(even){
     width: 1200px;
   }
   .keycode__infoBoxes {
-    flex-wrap: nowrap;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
