@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keycode</title>
+    <link rel="stylesheet" href="./Css/index.css" />
+    <link rel="icon" href="./Assets/Images/logo.svg" type="image/svg">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <section class="header__wrapper">
+          <div class="header__logo">
+            <img src="./Assets/Images/logo.svg" alt="logo" class="logo" />
+            <p>نمایش کد کلید کیبورد</p>
+          </div>
+          <a href="./codeList.html" target="_blank" class="table__btn">جدول کلید</a>
+        </section>
+      </div>
+    </header>
+<section class="start_box" id="StartBox">
+  <div class="container">
+    <p>لطفا دکمه ای از کیبورد را فشار دهید تا اطلاعات آن را مشاهده نمایید</p>
+  </div>
+</section>
+   <main id="main">
+    <div class="container">
+      <div class="main__wrapper">
+        <h2>نمایش کد دکمه های کیبورد بوسیله جاوااسکریپت</h2>
+        <p id="ResultKeyCode" class="result__keycode"></p>
+        <h3 class="title">اطلاعات کد کلید</h3>
+        <div class="keycode__infoBoxes">
+          <div class="infoBox">
+            <div class="infoBox__header">
+                 event.key
+            </div>
+            <div class="infoBox__body" id="KeyBody">
+                
+            </div>
+            <div class="infoBox__footer"> 
+              <p>مقدار کلید فشار داده شده برای کلیدهای اصلاح‌کننده حساب می‌کند که CAPS و نویسه‌های جایگزین را برمی‌گردانند.</p>
+            </div>
+          </div>
+          <div class="infoBox">
+            <div class="infoBox__header">
+                 event.location
+            </div>
+            <div class="infoBox__body" id="LocationBody">
+
+            </div>
+            <div class="infoBox__footer"> 
+              <p>برخی از کلیدها بیش از یک بار روی صفحه کلید شما وجود دارند. این مکان کلید فشرده شده را نشان می دهد. آن را با هر دو شیفت امتحان کنید.</p>
+            </div>
+          </div>
+          <div class="infoBox">
+            <div class="infoBox__header">
+                 event.code
+            </div>
+            <div class="infoBox__body" id="CodeBody">
+
+            </div>
+            <div class="infoBox__footer"> 
+              <p>کلید فیزیکی روی صفحه کلید. اهمیتی نمی‌دهد که اصلاح‌کننده‌ای مانند Shift را نگه دارید.</p>
+            </div>
+          </div>
+          <div class="infoBox">
+            <div class="infoBox__header">
+                 event.which
+            </div>
+            <div class="infoBox__body" id="WhichBody">
+
+            </div>
+            <div class="infoBox__footer"> 
+              <p>
+                event.which و  در مرورگرهای مدرن event.which منسوخ شده اند.
+                به جای آن از .key و .code استفاده نمایید
+             </p>
+            </div>
+          </div>
+          <div class="infoBox">
+            <div class="infoBox__header">
+              Description
+            </div>
+            <div class="infoBox__body" id="DescriptionBody">
+
+            </div>
+            <div class="infoBox__footer"> 
+              <p>این توصیفی است که ما ایجاد کرده ایم. فکر می کنید می توان آن را بهبود بخشید؟ با ما در GitHub ارتباط برقرار کنید</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </main>
+
+    <script src="./JS/Main.js"></script>
+  </body>
+</html>
