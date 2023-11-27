@@ -28,7 +28,6 @@ html {
    */
 
 body {
-  margin: 0;
   height: 100vh;
   background-color: #f3f4f6;
   color: var(--SecondryColor);
@@ -38,9 +37,6 @@ body {
    * Render the `main` element consistently in IE.
    */
 
-main {
-  display: block;
-}
 
 /**
    * Correct the font size and margin on `h1` elements within `section` and
@@ -373,9 +369,14 @@ template {
   padding: 0 0.5rem;
 }
 header {
+  width: 100%;
   background-color: var(--PrimaryColor);
   color: #fff;
-  padding: 1rem 0;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
 }
 .logo {
   width: 40px;
@@ -452,12 +453,6 @@ header {
 #CodeBody{
   font-family: 'Shabnam';
 }
-main {
-  width: 100%;
-  height: 100vh;
-  display: none;
-  justify-content: center;
-}
 .title {
   margin: 50px 0;
   font-weight: bold;
@@ -506,31 +501,72 @@ main {
   text-align: center;
   min-height: 130px;
 }
-.codeListTable{
+.table__wrapper{
+  width: 100%;
+  overflow: auto;
+  margin-top: 60px;
+}
+
+table{
   padding: 20px;
   font-family: "Shabnam";
   direction: ltr;
-  margin-top: 50px;
+  width: 100%;
+  margin: 0;
+  direction: ltr;
+  color: var(--SecondryColor);
+  font-weight: bold;
+  margin: 0 auto 40px auto;
+  border-collapse: separate;
+  border-style: hidden;
 }
-table thead tr th{
-  padding: 15px 0;
-  border-bottom: 1px solid var(--SecondryColor);
-}
-@media screen and (max-width: 500px) {
-  .container {
-    width: 320px;
-  }
-  .keycode__infoBoxes {
-    flex-wrap: wrap;
-  }
-  .header__logo p {
-    font-size: 16px;
-  }
-  .table__btn {
-    padding: 10px;
-  }
+/* top-left border-radius */
+table tr:first-child th:first-child {
+  border-top-left-radius: 8px;
 }
 
+/* top-right border-radius */
+table tr:first-child th:last-child {
+  border-top-right-radius: 8px;
+}
+
+/* bottom-left border-radius */
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+/* bottom-right border-radius */
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+th{
+  padding: 20px 15px;
+  text-align: left;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #2563eb;
+}
+tbody tr td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+tbody tr:nth-child(even){
+  background-color: #e2e2e2;
+}
+@media screen and (max-width: 500px) {
+  .table__wrapper{
+    max-width: 40rem;
+    overflow: auto;
+    padding: 0 10px;
+  }
+}
 @media screen and (min-width: 500px) {
   .container {
     width: 500px;
@@ -538,6 +574,7 @@ table thead tr th{
   .keycode__infoBoxes {
     flex-wrap: wrap;
   }
+
 }
 @media screen and (min-width: 768px) {
   .container {
